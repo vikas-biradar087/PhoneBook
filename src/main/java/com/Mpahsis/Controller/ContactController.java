@@ -63,7 +63,7 @@ public class ContactController {
 		
 		contactservice.deleteContact(id);
 		
-		return new ResponseEntity<ApiResponse>(new ApiResponse("Contact deleted successfully", true),HttpStatus.OK);
+		return new ResponseEntity<ApiResponse>(new ApiResponse("Contact deleted successfully !!!", true),HttpStatus.OK);
 		
 	}
 	//http://localhost:8080/Contact/Api/vikas

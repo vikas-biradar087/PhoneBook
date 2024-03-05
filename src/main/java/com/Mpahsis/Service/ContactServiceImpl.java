@@ -28,6 +28,8 @@ public class ContactServiceImpl implements Contactservice {
 	@Override
 	public ContactDto createContact(ContactDto contactDto) {
 		
+		
+		
 		//Convert dto to entity
 		
 		Contact contact=mapToEntity(contactDto);
@@ -37,6 +39,12 @@ public class ContactServiceImpl implements Contactservice {
 		//convert entity to dto 
 		ContactDto newResponce = mapToDTO(newContact);
 		return newResponce;
+		
+		//if (contactDto.getId() !=null){
+		
+			//return "contact Saved"//
+		
+		//}else{return "contact Failed To save"}
 	}
 	
 	
@@ -78,6 +86,15 @@ public class ContactServiceImpl implements Contactservice {
 		return mapToDTO(saveUpdatedContact);
 		
 		
+		/**
+		 * if(contactRepository.existsById(contactDto.getContactById())){
+		 * contactrepo.save(contact)
+		 * return "update success"
+		 * }else{
+		 * 		return "no record found"
+		 * }
+		 */
+		
 	}
 
 
@@ -105,6 +122,11 @@ public class ContactServiceImpl implements Contactservice {
 		
 		Contact contactId = contactRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("Contact", "id", id));
 		return mapToDTO(contactId);
+		
+		
+		//if(contactId.isPresent()){
+		//return findById.get();//
+		//return null//
 	}
 
 
